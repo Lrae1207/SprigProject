@@ -36,8 +36,16 @@ setSolids([])
 let level = 0
 const levels = [
   map`
-p.
-..`
+.............
+.............
+.............
+.............
+.............
+.............
+.............
+.............
+p............
+.............`
 ]
 
 setMap(levels[level])
@@ -46,8 +54,20 @@ setPushables({
   [ player ]: []
 })
 
+onInput("w", () => {
+  getFirst(player).y -= 1
+})
+
 onInput("s", () => {
   getFirst(player).y += 1
+})
+
+onInput("a", () => {
+  getFirst(player).x -= 1
+})
+
+onInput("d", () => {
+  getFirst(player).x += 1
 })
 
 afterInput(() => {
